@@ -9,5 +9,5 @@ router.post('/',auth.isLogin,Todo.crate)
 router.delete('/:id',auth.isLogin,Todo.remove)
 router.put('/:id',auth.isLogin,Todo.update)
 router.put('/:id/markcompleted',auth.isLogin,Todo.markCompleted)
-
+router.delete('/',auth.isLogin,Todo.removeCompleted)
 module.exports = router;

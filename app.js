@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 require('dotenv').config()
 app.use(cors())
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/todoDB',{useMongoClient:true});
+mongoose.connect('mongodb://localhost/todoDB');
 
 app.use('/api/users', users);
 app.use('/api/todos', todo);
