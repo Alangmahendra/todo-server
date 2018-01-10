@@ -75,11 +75,11 @@ class Todo {
   }
 
   static removeCompleted(req,res){
-    Model.remove({completed : true},(err,rows)=>{
+    Model.findAndRemove({completed : true},(err,rows)=>{
       if(err){
         res.json({message:err})
       } else {
-        res.json({message:'bulk data has been terminated'})
+        res.json({message:'bulk data has been terminated',data:rows})
       }
     })
   }
