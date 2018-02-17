@@ -46,7 +46,7 @@ class Todo {
     Model.findOneAndUpdate({
       _id:req.params.id,
       author:req.user._id
-    },obj,(err,rows)=>{
+    },obj,{new:true},(err,rows)=>{
       if(err){
         res.json({message:err})
       }else {
